@@ -1,0 +1,13 @@
+cmake_minimum_required(VERSION 3.16)
+project(SpeechNotes LANGUAGES CXX)
+add_executable(SpeechNotes WIN32 src/main.cpp)
+target_compile_features(SpeechNotes PRIVATE cxx_std_17)
+target_link_libraries(SpeechNotes PRIVATE sapi ole32 uuid comctl32 comdlg32 shell32)
+if(MINGW)
+  target_compile_options(SpeechNotes PRIVATE -finput-charset=UTF-8)
+  target_link_options(SpeechNotes PRIVATE -municode -static)
+endif()
+if(MSVC)
+  target_compile_options(SpeechNotes PRIVATE /utf-8)
+endif()
+

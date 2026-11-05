@@ -1,0 +1,14 @@
+build/
+*.exe
+*.dll
+*.o
+*.obj
+.vscode/
+.idea/
+实验结果/
+results/
+tests/generated/
+数据集/cifar-100-binary/
+数据集/*.tar.gz
+*.log
+Thumbs.db
